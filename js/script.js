@@ -6,10 +6,10 @@ const createElement = (type, src, fpk, capacity, i) => {
   div.className = "card w-96 mx-auto shadow-xl ";
   div.innerHTML = `
         <figure>
-          <img src=${src} alt="Shoes" />
+          <img class='object-cover w-full h-52' src=${src} alt="Shoes" />
         </figure>
         <div class="card-body">
-          <h2 class="card-title font-bold">${type}!</h2>  
+          <h2 class="card-title font-bold">${type}</h2>  
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div class="text-lg font-medium flex justify-between">
           
@@ -21,7 +21,7 @@ const createElement = (type, src, fpk, capacity, i) => {
           <label for="my-modal-${i}" class="modal cursor-pointer">
             <label class="modal-box relative shadow-none" for="">
               <div class="card w-full bg-base-100 ">
-                <figure><img src=${src} alt="Shoes" /></figure>
+                <figure><img  src=${src} alt="Shoes" /></figure>
                 <div class="card-body">
                   <h2 class="card-title">
                     ${type}
