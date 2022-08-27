@@ -56,3 +56,16 @@ main.addEventListener("click", (e) => {
   if (e.target.nodeName === "BUTTON") {
   }
 });
+
+/* --------------------------------------------------------------------- */
+
+const input = document.getElementById("input");
+input.addEventListener("input", (e) => {
+  const i = data.filter((i) => {
+    return i.type.toLowerCase().includes(e.target.value);
+  });
+  main.innerHTML = "";
+  i.map((e, i) => {
+    createElement(e.type, e.src, e.fpk, e.capacity, i);
+  });
+});
