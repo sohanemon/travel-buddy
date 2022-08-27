@@ -10,7 +10,7 @@ const createElement = (type, src, fpk, capacity, i) => {
         </figure>
         <div class="card-body">
           <h2 class="card-title font-bold">${type}</h2>  
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <p>Rakib wanna give a tour, but destination onek dur...</p>
           <div class="text-lg font-medium flex justify-between">
           
             <span>Fare Per Kilo : ${fpk}</span><span>Capacity: ${capacity}</span>
