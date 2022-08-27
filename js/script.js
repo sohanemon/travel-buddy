@@ -1,7 +1,7 @@
 import data from "../data/transport.js";
 const main = document.getElementById("main");
 
-const createElement = (type, src, fpk, capacity) => {
+const createElement = (type, src, fpk, capacity, i) => {
   const div = document.createElement("div");
   div.className = "card w-96 mx-auto shadow-xl ";
   div.innerHTML = `
@@ -16,9 +16,9 @@ const createElement = (type, src, fpk, capacity) => {
             <span>Fare Per Kilo : ${fpk}</span><span>Capacity: ${capacity}</span>
           </div>
           <div class="card-actions justify-end">
-          <label for="my-modal-4" class="btn modal-button btn-secondary  text-white">Lets Go</label>
-          <input type="checkbox" id="my-modal-4" class="modal-toggle" />
-          <label for="my-modal-4" class="modal cursor-pointer">
+          <label for="my-modal-${i}" class="btn modal-button btn-secondary  text-white">Lets Go</label>
+          <input type="checkbox" id="my-modal-${i}" class="modal-toggle" />
+          <label for="my-modal-${i}" class="modal cursor-pointer">
             <label class="modal-box relative shadow-none" for="">
               <div class="card w-full bg-base-100 ">
                 <figure><img src=${src} alt="Shoes" /></figure>
@@ -46,16 +46,13 @@ const createElement = (type, src, fpk, capacity) => {
   `;
   main.appendChild(div);
 };
-data.map((e) => {
-  createElement(e.type, e.src, e.fpk, e.capacity);
+data.map((e, i) => {
+  createElement(e.type, e.src, e.fpk, e.capacity, i);
 });
 
 /* --------------------------------------------------------------------- */
 
 main.addEventListener("click", (e) => {
   if (e.target.nodeName === "BUTTON") {
-    e.target.addEventListener("click", (e) => {
-      console.log("dkfj");
-    });
   }
 });
